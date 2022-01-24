@@ -1,0 +1,217 @@
+/*GERAL*/
+
+*{
+    margin:0px;
+    padding:0px;
+}
+
+/*======================= COMEÇO DA NAVBAR ======================================*/
+a {
+    color:rgb(0, 0, 0);
+    text-decoration: none;
+    transition: 0.3s;
+}
+a:hover{
+    opacity:0.7;
+}
+
+nav{
+    width: 100%;
+   }
+
+.logo{
+    font-size: 24px;
+    letter-spacing: 4px;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    background-color: white;
+    height: 5rem;
+}
+
+.nav-list{
+   list-style: none;
+   display: flex;
+}
+
+.nav-list li{
+    letter-spacing:3px ;
+    margin-left: 32px;
+}
+
+.mobile-menu{
+    display: none;
+    cursor:pointer;
+}
+
+.mobile-menu div{
+    width: 32px;
+    height: 2px;
+    background: rgb(0, 0, 0);
+    margin: 8px;
+}
+
+/*================================== CONTEUDO DO SITE ==============================================*/
+
+body{
+    width: 100%;
+    box-sizing: border-box;
+    background-color: rgb(237, 237, 237);
+}
+
+.container-body{
+    background-color: rgb(237, 237, 237);
+    padding:1.8rem;
+    display: flex;
+}
+.container-principal{
+    background-color: white;
+}
+
+
+
+/*===================Noticia Principal================*/
+
+.noticia-principal{
+    display: flex;
+    padding: 2rem;
+}
+
+.img-principal{
+    border-radius: 1rem;
+    max-width: 25%;
+}
+
+
+.conteudo-principal{
+    padding: 2rem;
+    font-size: 2.5rem;
+}
+
+.conteudo-principal a{
+    text-decoration: underline;
+}
+
+.conteudo-principal p{
+    padding-top: 1rem;
+    font-size: 1.5rem;
+}
+
+.data{
+    padding-top: 0.5rem;
+    float: left;
+    color:gray;
+    font-size: 1rem;
+}
+
+/*====================Cards Noticia===========================*/
+
+.container-cards{
+    display: flex;
+    padding:2rem;
+}
+
+.card-noticia{
+    padding:1rem;
+}
+
+.img-card{
+    max-width: 15rem;
+    border-radius: 0.8rem;
+}
+
+.card-noticia a{
+    text-decoration: underline;
+    font-size: 1.5rem;
+}
+
+/* =================== RESPONSABILIDADE ====================*/
+@media (max-width:540px){
+
+    /*CONTAINER PRINCIPAL*/
+    .container-principal{
+        flex-direction: column;
+    }
+
+    .noticia-principal{
+        flex-direction: column;
+    }
+
+    .img-principal{
+        border-radius: 15rem;
+        max-width: 100%;
+        border: solid rgba(0, 0, 0, 0.474) 1px;
+    }
+
+    .conteudo-principal{
+        text-align: center;
+    }
+
+    .conteudo-principal p{
+        font-size: 20px;
+    }
+
+    .data{
+        color:gray;
+        font-size: 15px;
+    }
+
+    /*Conteudo cards*/
+    .container-cards{
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+/*NAVBAR RESPONSIVA*/
+@media (max-width: 999px){
+
+    body{
+        overflow-x: hidden;
+
+    }
+    .nav-list{
+        position: absolute;
+        top: 8vh;
+        right: 0;
+        right: 0;
+        width: 50vw;
+        height: 92vh;
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+
+    }
+
+    .nav-list li{
+        margin-left: 0;
+        opacity: 0;
+    }
+
+    .mobile-menu{
+        display:block;
+    }
+    
+    .nav-list.active{
+        transform: translateX(0);
+    }
+}
+
+/*KEY FRAME*/
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px)
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0)
+    }
+}
